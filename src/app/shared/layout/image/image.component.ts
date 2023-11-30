@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApiService } from 'src/app/service/search.service';
+import { ApiService } from 'app/service/search.service';
 
 @Component({
   selector: 'app-image',

@@ -4,8 +4,8 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, ReactiveFormsModu
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SnackbarService } from 'src/app/service/dialog.service';
-import { ApiService } from 'src/app/service/search.service';
+import { SnackbarService } from 'app/service/dialog.service';
+import { ApiService } from 'app/service/search.service';
 
 @Component({
   selector: 'app-reset-password',

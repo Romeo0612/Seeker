@@ -15,7 +15,7 @@ import {MatSliderModule} from '@angular/material/slider';
 
 import { HomeComponent } from './home/home.component';
 
-import { LayoutModule } from '../shared/layout/layout.module';
+
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
@@ -33,6 +33,7 @@ import { ModalComponent } from './modal/modal.component';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { ProfileUpdateComponent } from './profile-update/profile-update.component';
 import { FormlyExtensionModule } from '../formly-extention/formly-extention.module';
+import { LayoutModule } from 'app/shared/layout/layout.module';
 
 
 
@@ -70,9 +71,9 @@ JobDetailsComponent,
     CommonModule,AngularEditorModule,MatIconModule,MatTabsModule, MatIconModule, MatButtonModule,MatSliderModule,
     MatStepperModule,
     MatCardModule,
-    FormsModule,LayoutModule,
+    FormsModule,
      MatRadioModule,
-    MatFormFieldModule,LayoutModule,NgbModule,
+    MatFormFieldModule,NgbModule,
 
     MatInputModule, MatProgressBarModule,
     AdminRoutingModule, AgGridModule,FormsModule,NgMultiSelectDropDownModule.forRoot(),

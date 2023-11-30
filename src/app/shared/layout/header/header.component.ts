@@ -2,8 +2,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
-import { ApiService } from 'src/app/service/search.service';
-import { SharedService } from 'src/app/service/shared.service';
+import { ApiService } from 'app/service/search.service';
+import { SharedService } from 'app/service/shared.service';
 
 @Component({
   selector: 'app-header',

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router ,ActivatedRoute} from '@angular/router';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
-import { ApiService } from 'src/app/service/search.service';
+import { ApiService } from 'app/service/search.service';
 
 @Component({
   selector: 'app-event-view',

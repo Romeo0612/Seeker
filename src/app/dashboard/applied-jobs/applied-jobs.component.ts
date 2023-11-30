@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { ApiService } from 'src/app/service/search.service';
+import { ApiService } from 'app/service/search.service';
 import { ColDef, FirstDataRenderedEvent, GridReadyEvent } from 'ag-grid-community';
 
 

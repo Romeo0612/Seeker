@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
-import { ApiService } from 'src/app/service/search.service';
+import { ApiService } from 'app/service/search.service';
 import { ColDef, FirstDataRenderedEvent, GridReadyEvent } from 'ag-grid-community';
 import { IDropdownSettings, } from 'ng-multiselect-dropdown';
 import { AngularEditorConfig } from '@kolkov/angular-editor';

@@ -14,7 +14,7 @@ import {
 import * as pdfMake from 'pdfmake/build/pdfmake.js';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 import { HttpClient } from '@angular/common/http';
-import { ApiService } from 'src/app/service/search.service';
+import { ApiService } from 'app/service/search.service';
 
 
 (<any>pdfMake).vfs = pdfFonts.pdfMake.vfs;

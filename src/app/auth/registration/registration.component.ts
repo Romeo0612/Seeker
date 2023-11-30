@@ -3,10 +3,13 @@ import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { ApiService } from 'src/app/service/search.service';
+
 import { MatChipsModule } from '@angular/material/chips';
-import { SnackbarService } from 'src/app/service/dialog.service';
-import { AuthService } from 'src/app/service/auth.service';
+
+import { AuthService } from 'app/service/auth.service';
+import { ApiService } from 'app/service/search.service';
+import { SnackbarService } from 'app/service/dialog.service';
+
 
 
 @Component({

@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import {  FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { ApiService } from 'src/app/service/search.service';
+import { ApiService } from 'app/service/search.service';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
-import { SharedService } from 'src/app/service/shared.service';
+import { SharedService } from 'app/service/shared.service';
 
 @Component({
   selector: 'app-job-details',

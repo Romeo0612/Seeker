@@ -2,7 +2,7 @@
 
 import { Component } from '@angular/core';
 import { ICellRendererAngularComp } from 'ag-grid-angular';
-import { DataService } from 'src/app/service/data.service';
+import { DataService } from 'app/service/data.service';
 
 
 @Component({

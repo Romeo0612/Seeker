@@ -4,7 +4,7 @@ import * as geolib from 'geolib';
 // import * as turf from '@turf/turf';
 // import { google } from "google-maps";
 import { FormControl } from '@angular/forms';
-import { LocationService, Maps } from 'src/app/service/location.service';
+import { LocationService, Maps } from 'app/service/location.service';
 // import { Draggable } from 'leaflet';
 declare var google: any;
 interface Entry {

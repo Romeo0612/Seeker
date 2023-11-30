@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 import {  FormBuilder, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
-import { ApiService } from 'src/app/service/search.service';
+import { ApiService } from 'app/service/search.service';
 
 @Component({
   selector: 'app-postedjobs',

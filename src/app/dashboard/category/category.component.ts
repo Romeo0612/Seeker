@@ -1,13 +1,13 @@
 import { Component, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { ApiService } from 'src/app/service/search.service';
+import { ApiService } from 'app/service/search.service';
 import {MatTabsModule} from '@angular/material/tabs';
 import { LayoutModule } from "../../shared/layout/layout.module";
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 import slugify from 'slugify';
-import { SharedService } from 'src/app/service/shared.service';
+import { SharedService } from 'app/service/shared.service';
 
 @Component({
   selector: 'app-category',

@@ -22,11 +22,13 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatStepperModule } from '@angular/material/stepper';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import {MatSliderModule} from '@angular/material/slider';
-import { LayoutModule } from '../shared/layout/layout.module';
+
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EventComponent } from './event/event.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ActionButtonComponent2 } from './event/action-button2';
+import { LayoutModule } from 'app/shared/layout/layout.module';
+
 
 
 @NgModule({

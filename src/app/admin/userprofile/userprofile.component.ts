@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, ValidatorFn, Validators } from '@angular/forms';
-import { ApiService } from 'src/app/service/search.service';
+import { ApiService } from 'app/service/search.service';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { Router } from '@angular/router';
 

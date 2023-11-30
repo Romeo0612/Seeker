@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ApiService } from 'src/app/service/search.service';
+import { ApiService } from 'app/service/search.service';
 import {MatTabsModule} from '@angular/material/tabs';
 import { LayoutModule } from "../../shared/layout/layout.module";
 import { MatIconModule } from '@angular/material/icon';

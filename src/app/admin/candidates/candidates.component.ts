@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import {  ActivatedRoute, Router } from '@angular/router';
 import { ColDef, FirstDataRenderedEvent, GridReadyEvent } from 'ag-grid-community';
-import { ApiService } from 'src/app/service/search.service';
+import { ApiService } from 'app/service/search.service';
 import { ActionButtonComponent } from './action-button';
 
 @Component({

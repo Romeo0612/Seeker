@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormsModule, FormBuilder, Validators, FormGroup, AbstractControl, ValidatorFn } from '@angular/forms';
-import { ApiService } from 'src/app/service/search.service';
+import { ApiService } from 'app/service/search.service';
 
 @Component({
   selector: 'app-profile',
