@@ -1,0 +1,237 @@
+<div
+    class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl"
+  >
+    <div class="modal-content">
+      <div class="modal-title">
+        <h2 style="font-weight: bold;" class="modal-title" id="companyModalLabel">Create Event</h2>
+      </div>
+
+
+
+      <div class="modal-body">
+        <form [formGroup]="formgrp">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <p>Event Name :</p>
+              <!-- [(ngModel)]="title" -->
+              <input type="text" class="form-control" formControlName="eventName" />
+            </div>
+            <div>
+                <span>Short Description</span>
+                <input type="text" class="form-control" formControlName="Description" />
+              </div>
+              <div class="col-12 col-md-6">
+                <p>Start Date :</p>
+                <!-- [(ngModel)]="title" -->
+                <input type="date" class="form-control" formControlName="startdate" />
+              </div>
+              <div class="col-12 col-md-6">
+                <p>End Date :</p>
+                <!-- [(ngModel)]="title" -->
+                <input type="date" class="form-control" formControlName="enddate" />
+              </div>
+              <div class="col-12 col-md-6">
+                <p><span><input type="checkbox" class="form-check-input" formControlName="isRegisterMandatory" />
+                </span>Is Registeration Mandatory: </p>
+              </div>
+             
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <p>Maximum no of participants:</p>
+              <input
+                type="number"
+                min="1"
+                class="form-control"
+                formControlName="opening"
+  
+              />
+              </div>
+              <div class="col-12 col-md-6" >
+             <p>Event Mode:</p>
+            <!-- [(ngModel)]="role" -->
+            <!-- <input type="text" class="form-control" [(ngModel)]="role" /> -->
+            <select
+              class="form-select"
+              formControlName="mode"
+              aria-label="Default select example"
+              (change)="onModeChange($event)"
+            >
+            <option value="" selected disabled>Select</option>
+            <option value="ONLINE">ONLINE</option>
+            <option value="OFFLINE">OFFLINE</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div *ngIf="formgrp.get('mode')?.value === 'OFFLINE'">
+      
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <p>No/StreetName:</p>
+            <!-- [(ngModel)]="title" -->
+            <input type="text" class="form-control" formControlName="street" />
+          </div>
+          <div class="col-12 col-md-6">
+            <p>Area/LandMark:</p>
+            <!-- [(ngModel)]="title" -->
+            <input type="text" class="form-control" formControlName="area" />
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <p>District:</p>
+            <!-- [(ngModel)]="title" -->
+            <input type="text" class="form-control" formControlName="district" />
+          </div>
+          <div class="col-12 col-md-6">
+            <p>Pincode</p>
+            <!-- [(ngModel)]="title" -->
+            <input type="text" class="form-control" formControlName="pincode" />
+          </div>
+
+        </div>
+        </div>
+
+          <div >
+            <!-- <div class="col-md-12">
+              <div class="map-container">
+                <location [Address]="" [Latlog]="mapdata" [Flag]="true"[Draggable]="true" (onClick)="click($event)"></location>
+                <button (click)="hideMap()" class="btn btn-danger">
+                  <i class="fas fa-times"></i> Cancel
+                </button>
+              </div>
+            </div> -->
+          </div>
+          
+          <div class="col-12 col-md-6" *ngIfflag="">
+            <p>Status:</p>
+            <select
+              class="form-select"
+              formControlName="status1"
+              aria-label="Default select example"
+            >
+              <option value="open">Open</option>
+              <option value="Close">Closed</option>
+            </select>
+          </div>
+          <mat-tab-group style="margin-top: 3%; height: calc(97% - 200px);">
+
+            <!-- Contacts Tab -->
+            <mat-tab label="Add Contacts">
+              <div class="row tab-content">
+          
+                <div style="text-align-last: end; width: 100%">
+      
+                  <button class="icon" matTooltip="Add" mat-mini-fab (click)="onAddButonClick()"style="
+                      margin-right: 10px;
+                      background-color: rgb(237, 28, 36);
+                      color: white;
+                    ">
+                    <mat-icon>add</mat-icon>
+                  </button>
+                </div>
+                <ag-grid-angular
+                #agGrid id="myGrid"style="width: auto; height: calc(80vh - 250px); flex: 1 1 auto" class="ag-theme-alpine"
+             [columnDefs]="columnDefs" [rowData]="listContact" [defaultColDef]="defaultColDef" [suppressMenuHide]="true"
+             [pagination]="true" [paginationPageSize]="50" [enableRangeSelection]="true" [rowSelection]="'multiple'"
+            [suppressRowClickSelection]="true" [components]="frameworkComponents"(firstDataRendered)="onFirstDataRendered1($event)" [singleClickEdit]="true"
+             (selectionChanged)="onSelectionChanged1($event)"  
+             (rowValueChanged)="onRowValueChanged($event)"
+             [gridOptions]="gridOptions"> 
+            </ag-grid-angular>
+              </div> 
+            
+    
+
+            </mat-tab>
+
+          
+            <!-- Images Tab -->
+            <mat-tab label="Images">
+              <div class="row tab-content">
+                <div class="text-center mb-5">
+                  <div fxLayoutAlign="center center">
+                    <label class="hoverable" for="eventLogo">
+                      <img [src]="url ? url : ''">
+                      <div class="hover-text">Upload event logo</div>
+                      <div class="background"></div>
+                      <input id="eventLogo" type='file' style="display: none;" (change)="handleFileUpload('eventLogo','eventLogo')" (change)="onSelectFile($event,true)">
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="row tab-content">
+                <div class="text-center mb-5">
+                  <div fxLayoutAlign="center center">
+                    <label class="hoverable" for="eventBanner">
+                      <img [src]="url1 ? url1 : ''">
+                      <div class="hover-text">Upload event Banner</div>
+                      <div class="background"></div>
+                      <input id="eventBanner" type='file'style="display: none;" (change)="handleFileUpload('eventBanner','eventBanner')" (change)="onSelectFile($event,false)">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </mat-tab>
+          
+            <!-- Full Description Tab -->
+            <mat-tab label="Full Description">
+              <div class="scrollable-tab-content">
+                <div class="row tab-content">
+                  <div class="col-md-10">
+                    <p style="font-weight: bold;">Enter Full Description of the Event:</p>
+                    <textarea class="form-control larger-textarea" formControlName="fullDescription"></textarea>
+                    <!-- Add more full description fields as needed -->
+                  </div>
+                </div>
+              </div>
+            </mat-tab>
+          </mat-tab-group>
+          
+          
+        </form>
+      
+
+      </div>
+      <div class="modal-footer d-flex justify-content-end">
+        <button
+          type="button"
+          class="btn btn-danger"
+          [disabled]="!this.formgrp.valid"
+          *ngIf="!button"
+          style="background-color:var(--main-color)"
+          (click)="
+            logFormValues();
+            endval = 1;
+            startval = 0
+          "
+          data-bs-dismiss="modal"
+        >
+          Save
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          *ngIf="button"
+          [disabled]="!this.formgrp.valid"
+          style="background-color:var(--main-color)"
+          (click)="updatevalue(); button = false"
+          data-bs-dismiss="modal"
+        >
+          Update
+        </button>
+        <button
+          type="button"
+          (click)="cancelButtonClick()"
+          class="btn btn-danger"
+          style="background-color:var(--main-color); margin-left: 8px;"
+          data-bs-dismiss="modal"
+        >
+        Cancel
+        </button>
+      </div>
+    </div>
+  </div>

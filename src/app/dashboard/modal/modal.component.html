@@ -1,0 +1,45 @@
+<!-- app-your-component-modal.component.html -->
+<h2 *ngIf="this.formAction=='Add'" class="modal-title">Add Contact</h2>
+<h2 *ngIf="this.formAction=='Edit'" class="modal-title">Edit Contact</h2>
+<form [formGroup]="myForm">
+  <mat-dialog-content>
+    <mat-form-field class="example-full-width">
+      <mat-label>Contact Name</mat-label>
+      <input matInput placeholder="Enter name" formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Contact Phone Number</mat-label>
+      <input matInput placeholder="Enter phone number" maxlength="10" formControlName="phone">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Contact Email</mat-label>
+      <input matInput placeholder="Enter email" formControlName="contactemail">
+      <mat-error *ngIf="myForm.get('contactemail').hasError('email') && myForm.get('contactemail').touched">
+        Please enter a valid email address.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Contact Role</mat-label>
+      <input matInput placeholder="Enter role" formControlName="role">
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button *ngIf="formAction=='Add'" mat-raised-button (click)="submitForm()" style="
+    margin-left: 5px;
+    background-color: rgb(237, 28, 36);
+    color: white;
+  ">Submit</button>
+
+    <button *ngIf="this.formAction=='Edit'" mat-raised-button (click)="editForm()" style="
+
+    background-color: rgb(237, 28, 36);
+    color: white;
+  ">Update</button>
+    <button *ngIf="this.formAction=='Add'" mat-button type="button" (click)="resetForm()">Reset</button>
+    <button mat-button type="button" (click)="closeModal()">Close</button>
+  </mat-dialog-actions>
+</form>
